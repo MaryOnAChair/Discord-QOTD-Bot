@@ -16,5 +16,4 @@ async def on_ready():
     print("I'm in")
     print(bot.user)
 
-print(bot_key)
 bot.run(bot_key)
