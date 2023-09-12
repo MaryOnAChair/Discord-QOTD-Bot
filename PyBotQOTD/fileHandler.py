@@ -15,7 +15,7 @@ def getQOTD():
       return QOTD
   
 def updateUsedQuestions(QOTD):
-  with open(usedFile,'w') as usedQuestions:
+  with open(usedFile,'a') as usedQuestions:
       usedQuestions.writelines(QOTD)
       usedQuestions.close()
 
