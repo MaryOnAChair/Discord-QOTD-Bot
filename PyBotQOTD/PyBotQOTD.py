@@ -4,6 +4,8 @@ from discord.ext import commands,tasks
 from dotenv import load_dotenv
 import os
 
+from fileHandler import getQOTD
+
  
 
 load_dotenv('.env.txt')
@@ -12,11 +14,7 @@ bot_key = os.getenv('botKey')
 CHANNEL_ID = 1146189271691182160
 bot = commands.Bot(command_prefix='$',intents=discord.Intents.all())
 
-file = "listOQuestions.txt"
-
-
-
-
+getQOTD()
 
 @bot.event
 async def on_ready():
