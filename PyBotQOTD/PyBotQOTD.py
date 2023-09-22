@@ -3,9 +3,8 @@ import discord
 from discord.ext import commands,tasks
 from dotenv import load_dotenv
 import os
-
+from timeHandler import MyCog
 from fileHandler import getQOTD,updateUsedQuestions
-
  
 
 load_dotenv('.env.txt') # loads .env file
@@ -21,5 +20,6 @@ async def on_ready():
     print("I'm in")
     print(bot.user)
     test = getQOTD()
+    MyCog(bot)
 
 bot.run(bot_key) # Runs Dave :)
