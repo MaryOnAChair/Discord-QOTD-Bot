@@ -15,6 +15,14 @@ class MyCog(commands.Cog):
     def cog_unload(self):
         self.my_task.cancel()
 
+    @tasks.loop(time=time)
+    async def my_task(self):
+        print("My task is running!")
+        channel = self.bot.get_channel(1146189271691182160)
+        await channel.send(getQOTD())
+
+
+
 
 
     
