@@ -10,7 +10,7 @@ from fileHandler import getQOTD,updateUsedQuestions
 load_dotenv('.env.txt') # loads .env file
 bot_key = os.getenv('botKey') # gets bot key from .env file
 
-CHANNEL_ID = 1146189271691182160  # Assigns static channel name, -> Will be changed
+CHANNEL_ID = 966211020064444456  # Assigns static channel name, -> Will be changed
 bot = commands.Bot(command_prefix='$',intents=discord.Intents.all()) # Creates bot
 
 
@@ -19,7 +19,6 @@ bot = commands.Bot(command_prefix='$',intents=discord.Intents.all()) # Creates b
 async def on_ready():
     print("I'm in")
     print(bot.user)
-    test = getQOTD()
     MyCog(bot)
 
 bot.run(bot_key) # Runs Dave :)

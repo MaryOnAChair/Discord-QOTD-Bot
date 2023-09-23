@@ -5,7 +5,7 @@ from fileHandler import getQOTD,updateUsedQuestions
 utc = datetime.timezone.utc
 
 # If no tzinfo is given then UTC is assumed.
-time = datetime.time(hour=23, minute=36, tzinfo=utc)
+time = datetime.time(hour=22, minute=48, tzinfo=utc)
 
 class MyCog(commands.Cog):
     def __init__(self, bot):
@@ -18,7 +18,7 @@ class MyCog(commands.Cog):
     @tasks.loop(time=time)
     async def my_task(self):
         print("My task is running!")
-        channel = self.bot.get_channel(1146189271691182160)
+        channel = self.bot.get_channel(966211020064444456)
         await channel.send(getQOTD())
 
 
