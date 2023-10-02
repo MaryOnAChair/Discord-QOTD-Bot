@@ -21,4 +21,10 @@ async def on_ready():
     print(bot.user)
     MyCog(bot)
 
+@bot.command()
+async def ping(ctx):
+    if isinstance(ctx.channel,discord.channel.DMChannel):
+        await ctx.send('pong')
+
+
 bot.run(bot_key) # Runs Dave :)
