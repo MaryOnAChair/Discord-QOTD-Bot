@@ -21,10 +21,14 @@ async def on_ready():
     print(bot.user)
     MyCog(bot)
 
+# Responds to User DM and user DM only
 @bot.command()
 async def ping(ctx):
     if isinstance(ctx.channel,discord.channel.DMChannel):
         await ctx.send('pong')
-
+@bot.command()
+async def  addQuestion(ctx):
+        if isinstance(ctx.channel,discord.channel.DMChannel):
+            await ctx.send('Processing Question Beep Boop')
 
 bot.run(bot_key) # Runs Dave :)
