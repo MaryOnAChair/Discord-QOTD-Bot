@@ -22,6 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="fileHandler.py" />
+    <Compile Include="questionHandler.py" />
     <Compile Include="timeHandler.py" />
     <Compile Include="PyBotQOTD.py" />
   </ItemGroup>
