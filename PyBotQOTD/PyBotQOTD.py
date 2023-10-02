@@ -29,9 +29,20 @@ async def ping(ctx):
         await ctx.send('pong')
 
 @bot.command()
-async def  addQuestion(ctx):
+async def addQuestion(ctx):
         if isinstance(ctx.channel,discord.channel.DMChannel):
             addToSuggested(ctx.message.content)
             await ctx.send('Processing Question Beep Boop')
+            
+
+@bot.command()
+async def notifyGod(ctx):
+        if isinstance(ctx.channel,discord.channel.DMChannel):
+            GodsID = await bot.fetch_user("insert User ID Here")
+            await GodsID.send('I have submitted a Question! Please look at it :)')
+        
+
+   
+
 
 bot.run(bot_key) # Runs Dave :)
