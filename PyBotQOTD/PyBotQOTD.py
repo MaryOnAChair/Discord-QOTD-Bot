@@ -33,16 +33,11 @@ async def addQuestion(ctx):
         if isinstance(ctx.channel,discord.channel.DMChannel):
             addToSuggested(ctx.message.content)
             await ctx.send('Processing Question Beep Boop')
-            
 
-@bot.command()
-async def notifyGod(ctx):
-        if isinstance(ctx.channel,discord.channel.DMChannel):
             GodsID = await bot.fetch_user(god_key)
             await GodsID.send('I have submitted a Question! Please look at it :)')
         
 
-   
 
 
 bot.run(bot_key) # Runs Dave :)
