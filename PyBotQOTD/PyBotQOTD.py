@@ -10,7 +10,7 @@ from questionHandler import addToSuggested
 
 load_dotenv('.env.txt') # loads .env file
 bot_key = os.getenv('botKey') # gets bot key from .env file
-
+god_key = os.getenv('godKey') # gets key from .env file -> for moderating questions
 CHANNEL_ID = 966211020064444456  # Assigns static channel name, -> Will be changed
 bot = commands.Bot(command_prefix='$',intents=discord.Intents.all()) # Creates bot
 
@@ -38,7 +38,7 @@ async def addQuestion(ctx):
 @bot.command()
 async def notifyGod(ctx):
         if isinstance(ctx.channel,discord.channel.DMChannel):
-            GodsID = await bot.fetch_user("insert User ID Here")
+            GodsID = await bot.fetch_user(god_key)
             await GodsID.send('I have submitted a Question! Please look at it :)')
         
 
